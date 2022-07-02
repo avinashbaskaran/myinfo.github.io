@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!---------LANDING PAGE---------->
+    <div id="Page1">
+        <meta charset="utf-8">
+            <title>Avinash Robotics</title>
+        </head>
+
+        <body style="font-family:Verdana;font-size:24px; background-color:#c0c0c0;">
+            <div>
+                <h1 style="text-align:center; color:#800000;"> Control Simulations</h1>
+                <h3 style="text-align:center;color:#800000;"> By: Avinash Baskaran </h3>
+                <h5 style="text-align:center;color:#800000;font-style: italic;"> Wearable and Bio-Robotics <a href="https://www.eng.auburn.edu/directory/cgr0002.html">(WeBR)</a> Lab <br> Auburn University </h5> 
+
+                <p style="width: 80%;margin-left: 10%; text-align:center;">
+                    <br><br>Interactive simulations of controllable dynamic systems:</p>
+                <p style="width: 80%;margin-left: 10%; text-align:center;font-size: 12px;">
+                    click within the region to "control" the ball
+                </p>
+            </div>
+            <hr>
+            <div style="width: 100%">
+                <div style= "width: 20%; height: 200px; float: right; margin-right: 30%; background: white;"> 
+                    <canvas id="canvas_frontpage" width="500" height="500">
+                    Canvas not supported; please update your browser.
+                    </canvas>
+
+                </div>
+                <div style = "width: 30%; height: 200px; float: right; margin-left: 20%;"> 
+                    <nav>
+                        <ul>
+                            <p style="float:center">Navigate to: </p>
+                            
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="IP.html">Inverted Pendulum</a></li>
+                            <li><a href="ballBeam.html">Ball and Beam</a></li>
+                            <li><a href="hapticPaddle.html">Haptic Paddle</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <hr>
+
+            <div style="width: 100%">
+                    <p style = "width: 60%; text-align:center;font-size:18px; text-align: justify;margin-left: 20%;font-style: italic;">
+                        Introduction: <br><br>
+                        The behavior of dynamic systems can be stabilized or driven (controlled) by the selection and tuning of system attributes.
+                        The most common system attribute selected for control is system Input.
+                    </p>
+                    
+            </div>
+        </body>
+    </div>
+</html>
+    
+    
+    
+<!---------------SCRIPTS:--------------->
+
+<script>
+    function show(shown, hidden) {
+        document.getElementById(shown).style.display='block';
+        document.getElementById(hidden).style.display='none';
+        return false;
+    }
+    </script>
+    
+
+
+<script>
+    // ControlSandbox
+    var rodi = document.getElementById("rodI");
+
+    var canvas_frontpage = document.getElementById("canvas_frontpage");
+    var context_frontpage = canvas_frontpage.getContext("2d");
+    // Dynamics properties:
+    var Ffront = 1; // input force (N)
+    var mfront = 10;
+    // Kinematics properties:
+    var afront = -9.81 // gravitational acceleration (m/s^2)
+    var xfront = 50; // intial x (m) 
+    var yfront = 50; // intial x (m)
+    //var theta = 30; // input force angle (degr)
+
+    moveProjectile();
+    function drawProjectile() {
+        context_frontpage.beginPath();
+        context_frontpage.arc(xfront, yfront, 5, 0, 10*Math.PI);
+        context_frontpage.fillStyle = "red";
+        context_frontpage.fill();
+        }
+    function moveProjectile() {
+        context_frontpage.clearRect(0, 0, canvas_frontpage.width, canvas_frontpage.height);
+        drawProjectile();
+        window.setTimeout(moveProjectile, 1000/30);
+    }
+</script>

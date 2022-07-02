@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!---------INVERTED PENDULULUM---------->
+    <div id="Page2">
+        <meta charset="utf-8">
+            <title>Avinash Robotics</title>
+        </head>
+        <body style="font-family:Verdana;font-size:24px; background-color:#c0c0c0;margin-left: 10%;">
+            <div style = "width:100%">
+                <div style = "width: 30%; float: right; margin-left: 0%;">
+                    <nav>
+                        <ul>
+                        <li><a href="index.html">Return Home</a></li>
+                        <li><a href="ballBeam.html">Ball and Beam</a></li>
+                        <li><a href="hapticPaddle.html">Haptic Paddle</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <h1 style="text-align:left; color:#800000;"> Inverted Pendulum</h1>
+                        <p style="font-size: 15px;width: 100%;margin-left: 0%">
+                            Description: a rod is connected at one end rigidly to a controllable DC motor and position sensor, and at the other end to a bob mass.
+                        </p>
+                        <br><br><br>
+                </div>
+            </div>
+            <hr>
+        
+            <div>
+                <h5> Enter parameters to simulate:</h5>
+                <div style="width: 30%; float: left; margin-left: 0%;height: 200px;"> 
+                    <h5>System (plant) parameters</h5>                
+                    <p>Rod Length: <input type="text" id="rodL"></p>
+                    <p>Intertia: <input type="text" id="rodI"></p>
+                    <p>Initial Angle: <input type="text" id="theta0"></p>
+                    <p>Bob mass (kg): <input type="text" id="bobM"></p>
+                    <h5>PID (control) parameters, <br>leave empty if 0</h5>          
+
+                    <p>(P) constant: <input type="text" id="Kp"></p>
+                    <p>(I) constant:  <input type="text" id="Ki"></p>
+                    <p>(D) constant:  <input type="text" id="Kd"></p>
+                    <button id="draw">Simulate Design</button>
+                </div>
+
+                <div style= "width: 40%; height: 400px; float: right; margin-right: 20%; margin-top: 10%; background: white;"> 
+                    <canvas id="Pendulum" width="500px" height="400px">
+                        Canvas not supported; please update your browser.
+                    </canvas>
+                </div>
+            </div>
+        </body>
+
+
+    </div>
+    <!-- <hr> -->
+
+    
+    
+<!---------------SCRIPTS:--------------->
+
+<script>
+    function show(shown, hidden) {
+        document.getElementById(shown).style.display='block';
+        document.getElementById(hidden).style.display='none';
+        return false;
+    }
+    </script>
+    
+<script>
+    function plotIP (element_id, rodL, rodI, theta0, bobM, Kp, Ki, Kd) {
+    // function polygon (element_id, nSides, psize, pcolor, pwidth) {
+        var c = document.getElementById(element_id);
+        c.width = c.width;
+        c.height = c.height;
+        var cxt = c.getContext("2d");
+        xo = c.width/2;
+        yo = c.height/1.2;
+
+        // draw "motor" / rotation point
+        cxt.beginPath();
+        cxt.arc(xo,yo, 5, 0, 2*Math.PI);
+        cxt.fillStyle = "red";
+        cxt.fill();
+        // draw rod
+        cxt.lineWidth = 5;
+        cxt.strokeStyle = 'red';
+        cxt.moveTo(xo,yo);
+        bobX = rodL*Math.cos(theta0)
+        bobY = rodL*Math.sin(theta0)
+        cxt.lineTo(bobX, bobY);
+        cxt.stroke();
+    }
+
+    (function () {
+        plotIP("Pendulum", 120, 10, 3.14, 10, 0, 0, 0);
+        document.querySelector('#draw').addEventListener('click', function (e) {
+        e.preventDefault();
+        var rodL = document.querySelector('#rodL'),
+            rodI = document.querySelector('#rodI'),
+            theta0 = document.querySelector('#theta0'),
+            bobM = document.querySelector('#bobM');
+            Kp = document.querySelector('#Kp');
+            Ki = document.querySelector('#Ki');
+            Kd = document.querySelector('#Kd');
+            plotIP("Pendulum", rodL.value, rodI.value, theta0.value, bobM.value, Kp.value, Ki.value, Kd.value);            
+        });
+    })();
+    </script>
+    </body>
+    </html>
