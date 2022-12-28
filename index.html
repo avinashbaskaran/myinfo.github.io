@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        
         body {
             margin: 0;
             font-family: 'Times New Roman', Times, serif;
@@ -47,7 +45,6 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
-            width: 60%;
         }
 
         .wrapper {
@@ -60,9 +57,9 @@
             padding: 15px;
         }
 
-        .main {
+        /* .main {
             height: 150vh;
-        }
+        } */
 
         .sidebar {
             width: 25%;
@@ -81,41 +78,85 @@
             font-family: 'Times New Roman', Times, serif;
             padding: 10px;
         }
-/* For desktop: */
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
 
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  [class*="col-"] {
-    width: 100%;
-  }
-}
 
+
+
+        /* Container holding the image and the text */
+        .container {
+        position: relative;
+        text-align: center;
+        color: white;
+        }
+
+        /* Bottom left text */
+        .bottom-left {
+        position: absolute;
+        bottom: 8px;
+        left: 16px;
+        }
+
+        /* Top left text */
+        .top-left {
+        position: absolute;
+        top: 8px;
+        left: 16px;
+        }
+
+        /* Top right text */
+        .top-right {
+        position: absolute;
+        top: 8px;
+        right: 16px;
+        }
+
+        /* Bottom right text */
+        .bottom-right {
+        position: absolute;
+        bottom: 8px;
+        right: 16px;
+        }
+
+        /* Centered text */
+        .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        }
+
+        
 </style>
-</head>
 
-<body style="font-family:Verdana;font-size:24px; background-color:#16161e;">
-    <div class="topnav">
-        <a class="active" href="index.html">Home</a>
-        <a href="https://avinashbaskaran.github.io/projects.html">Projects</a>
-        <a href="https://avinashbaskaran.github.io/resources.html">Resources</a>
-        <a href="https://avinashbaskaran.github.io/about.html">About</a>
-    </div>
+</head>
+    <div class="container">
+        <img src="04_Images/background.jpg"
+            class="center"
+            width = 60%>
+        <div class="bottom-left" 
+            style="font-size:4vw; text-align:center; 
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin-left: 25%; margin-bottom: 15%;
+            color:rgb(255, 255, 255)">
+            <b>I'M AVINASH BASKARAN</b>
+        </div>
+      </div>
+    <!-- <br> -->
+    <body style="font-family:Verdana;font-size:24px; background-color:#16161e;">
+        <div class="topnav">
+            <a class="active" href="index.html">Home</a>
+            <a href="https://avinashbaskaran.github.io/projects.html">Projects</a>
+            <a href="https://avinashbaskaran.github.io/resources.html">Resources</a>
+            <a href="https://avinashbaskaran.github.io/about.html">About</a>
+        </div>
+    
 
     <div class="wrapper">
         <div class="sidebar">
-            <img  src="04_Images/headshot.png" class="center"/>
+            <img  src="04_Images/headshot.png" 
+                class="center"
+                width= "90%";
+            />
             <h2 style="font-size:80%; text-align:center; color:#7b7b7b;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> 
                 I'm Avinash Baskaran</span></h2>
         <h6 style="font-size:80%; text-align:center; color:#ffffff;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> 
@@ -127,54 +168,52 @@
         <a href="https://github.com/avinashbaskaran?tab=repositories"><img src="04_Images/github.png" width="20" height="20" /></a>
     </div>
 
-    <div class="main"> 
-        <img src="04_Images/background.jpg" 
-        class="center";
-        />
-
-
-        <h1 style="font-size:80%; text-align:center; color:#7b7b7b;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;margin-left:-5%"> 
+    <div class="main">         
+        <h1 style="font-size:100%; text-align:center; color:#7b7b7b;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;margin-left:-5%"> 
             <b>RESEARCH INTERESTS</b></span></h1>
-            <p style="font-size:50%; text-align:left; color:#7b7b7b;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';">
+            <p style="font-size:50%; text-align:center; color:#7b7b7b;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';">
                 <br><b>
-                    Nonlinear Modeling | Estimation | Control |
+                    Robotics Design | Nonlinear Modeling | Estimation | Control |
                      Human-robot interaction | Human Augmentation
                 </b>
             </p>
         <br>
         <h1 style="font-size:80%; text-align:center; color:#7b7b7b;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> <b>EDUCATION</b></span></h1>
-            <ul style="font-size:50%; text-align:left; color:#7b7b7b;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';margin:2.5%;">
+            <ul style="font-size:50%; text-align:center; color:#7b7b7b;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';margin:2.5%;margin-left:-05%;">
                     <i class="fa fa-graduation-cap"></i>
                         Ph.D. Mechanical Engineering, 2022 - Present 
                     </li> 
                     
-                    <p style="font-size:90%; text-align:left; color:#7b7b7b;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';margin:0;margin-left:-0%">
+                    <p style="font-size:90%; text-align:center; color:#7b7b7b;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';margin:0;">
                         Auburn University, Auburn, AL 36849 </p>
             </ul>
             <br>
-            <ul style="font-size:50%; text-align:left; color:#7b7b7b;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';margin:2.5%;">
+            <ul style="font-size:50%; text-align:center; color:#7b7b7b;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';margin:2.5%;margin-left:-05%;">
                 <i class="fa fa-graduation-cap"></i>
                 M.S. Mechanical Engineering, 2020 - 2022
             </li> 
-            <p style="font-size:90%; text-align:left; color:#7b7b7b;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';margin:0;margin-left:-0%">
+            <p style="font-size:90%; text-align:center; color:#7b7b7b;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';margin:0;">
                 Auburn University, Auburn, AL 36849 </p>
             </ul>
             <br>
-            <ul style="font-size:50%; text-align:left; color:#7b7b7b;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';margin:2.5%;">
+            <ul style="font-size:50%; text-align:center; color:#7b7b7b;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';margin:2.5%;margin-left:-05%;">
                 <i class="fa fa-graduation-cap"></i>
                 B.S. Biomedical Engineering, 2015 - 2020
             </li> 
-            <p style="font-size:90%; text-align:left; color:#7b7b7b;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';margin:0;margin-left:-0%">
+            <p style="font-size:90%; text-align:center; color:#7b7b7b;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';margin:0">
                 The University of Texas at Austin, Austin, TX 78712 </p>
         </ul>
-
-
     </div>
-<div class="sidebar"></div>
+<!-- <div class="sidebar"></div> -->
         
 </body>
 </div>
 </html>
+
+
+
+
+
 
 <!---------------SCRIPTS:--------------->
 
@@ -185,8 +224,6 @@
         return false;
     }
 </script>
-
-
 
 <script>
     // ControlSandbox
@@ -216,5 +253,3 @@
         window.setTimeout(moveProjectile, 1000 / 30);
     }
 </script>
-
-
