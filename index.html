@@ -83,7 +83,7 @@
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 40%;
+  top: 30%;
   width: auto;
   margin-top: -22px;
   padding: 16px;
@@ -105,6 +105,7 @@
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
+
 
 /* Caption text */
 .text {
@@ -152,6 +153,14 @@
   from {opacity: .4}
   to {opacity: 1}
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: .6fr .75fr;
+    grid-gap: 20px;
+}
+
+
 
     
     
@@ -257,12 +266,34 @@
     
 
     
-    <div style="position:relative;">
-      <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
-      <p style="color:ffffff; font-size: 3vw;">Selected Projects</p>
+    <div style="position:relative;background-color:#282E34;">
 
-      
-<div class="slideshow-container">
+        <div class="grid-container">
+
+            <div class="grid-child purple">
+                        
+        <div style="color:#ddd;text-align:center;padding:50px 80px;">
+      <p style="color:ffffff; font-size: 3vw;">Selected Projects</p>
+    <div style="color:#ddd;text-align:center;;text-align: left;">
+            1. Neuromuscular Modeling and Estimation for Hand Poses <br>
+            <br>
+            2. Reinforcement Learning for the Control of a Soft Pneumatic Exoskeleton<br>
+            <br>
+            3. An Artificial human-like hand with nonlinear joint compliance, integrated tendons, and embedded joint angle sensing
+            <br><br>
+            4. Haptic Interfaces for neuromuscular interaction, teleoperation, and education
+            <br><br>
+            5. Rigid and soft serial-parallel robot design, fabrication, and control
+
+            </div>
+</div>
+
+
+<div class="grid-child green">
+</div>
+</div>
+
+      <div class="slideshow-container" style="margin-top: 30%;">
 
     <!-- Full-width images with number and caption text -->
     <div class="mySlides fade">
@@ -273,7 +304,7 @@
   
     <div class="mySlides fade">
       <div class="numbertext">2 / 3</div>
-      <img src="img2.jpg" style="width:100%">
+      <img src="04_Images/background.jpg" style="width:100%">
       <div class="text">Caption Two</div>
     </div>
   
@@ -297,7 +328,6 @@
   </div>
       </div>
     </div>
-    
     
     <div class="bgimg-1">
       <div class="caption">
