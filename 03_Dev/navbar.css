@@ -23,6 +23,10 @@
     border-radius: 4px;
     SCROLL DOWN<br>FOR MORE
   }
+
+  #fade1{
+    transition: .4s; /* Adds a transition effect when the padding is decreased */
+  }
   
   /* Style the logo */
   #navbar #logo {
