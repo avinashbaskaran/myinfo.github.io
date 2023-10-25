@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <link rel="stylesheet" type="text/css" href="03_Dev/navbar.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body,
@@ -209,20 +210,22 @@
             margin: 20px auto;
             float: left;
         }
+
+        .vl {
+            border-left: 6px solid #ffffff;
+            position: absolute;
+        }
     </style>
 
 <body>
-    <!-- <div class="topnav" style="width:98vw;">
-            <br>
-              <a class="active" href="index.html" style="text-align: center;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
-                Home</a>
-              <a href="projects.html" style="text-align: center;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
-                Projects</a>
-              <a href="resources.html"style="text-align: center;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
-                Resources</a>
-              <a href="about.html"style="text-align: center;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
-                About</a>
-          </div> -->
+    <div id="navbar">
+        <div id="navbar-right">
+            <a class="active" href="#home">Home</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+        </div>
+    </div>
+
     <div class="bgimg-1">
         <div class="caption">
             <div id="container" style="float: left;">
@@ -271,36 +274,43 @@
             margin-left:4vw; margin-top: -3vh;font-size: 1vw; ">
                     University of Texas at Austin (2020)
                 </h3>
-                <!-- <hr style="width:30%;text-align:left;margin-left:20"> -->
-                <!-- <h3 style=" color:#000000; text-align: left; font-family:Arial, Helvetica, sans-serif;
-            margin-left: 6vw;margin-top: 2vh; font-size: 2vw;">
-                Research interests: <br>
-
-                <h3 style=" color:#000000; text-align: left; font-family:Arial, Helvetica, sans-serif;
-            margin-left: 7vw; margin-top: -01.5vh;font-size: .8vw; ">
-                    Wearable Robotics, <br>
-                </h3>
-                <h3 style=" color:#000000; text-align: left; font-family:Arial, Helvetica, sans-serif;
-            margin-left: 5vw; margin-top: -01.5vh;font-size: .8vw; ">
-                Rehabilitation Engineering,<br>
-            </h3>
-                <h3 style=" color:#000000; text-align: left; font-family:Arial, Helvetica, sans-serif;
-            margin-left: 5vw; margin-top: -01.5vh;font-size: .8vw; ">
-                    Neuromuscular Interfaces<br>
-                </h3> -->
-                <br>
-                </h3>
             </div>
         </div>
-        <div id="container" style="float: right; text-align: center;margin-right:5vw; margin-top: 35vw;">
-            <p class="big" ; style="letter-spacing: .5vw;"> SCROLL DOWN<br>FOR MORE
+
+    </div>
+
+    <div id="navbar">
+        <a href="#default" id="bottom" style="line-height: 5vh;">SCROLL DOWN <br> FOR MORE</a>
+        </div>
+    </div>
+
+    
+    <div style="position:relative;background-color:#282E34;width: 100vw;height:20vw;padding:5%">
+        <div style="color:#ddd;text-align:center;padding:1vw 1vw;float:left">
+            <p class="big" style="color:ffffff; font-size: 3vw;text-align: left;
+            margin-left: 5vw;">
+                Research <br>Interests
             </p>
         </div>
-
+        <div class="vl" style="height: 5vw;left: 35vw;margin-top:5vw"> </div>
+        <div class="container" style="float: left;width: 19vw;margin-left: 5vw;
+        padding:2%;margin-top: 3vw;">
+            <p class="big" style="color: #ffffff;text-align: center; font-size:1vw">
+                Wearable Robotics
+                <!-- <div img  -->
+            </p>
+        </div>
+        <div class="container" style="float: left;width: 18vw;padding:2%;margin-top: 3vw;margin-left: -2vw">
+            <p class="big" style="color: #ffffff;text-align: center; font-size:1vw">
+                Rehabilitation Engineering<br>
+            </p>
+        </div>
+        <div class="container" style="float: left;width: 20vw;padding:2%;margin-top: 3vw;margin-left: -2vw">
+            <p class="big" style="color: #ffffff;text-align: center; font-size:1vw">
+                Neuromuscular Interfaces<br>
+            </p>
+        </div>
     </div>
-    </div>
-    </div>
-
 
 
 
@@ -310,38 +320,38 @@
                 Selected Projects
             </p>
             <div class="container" style="float: left;width: 19vw;margin-left: 3vw;padding:2%;margin-top: -3vw;">
-                <a href="index.html">
+                <a href="index.html" style="text-decoration:none">
                     <p class="normal" style="color: #ffffff;text-align: center;margin-top:1.5vw">
                         Neuromuscular Modeling and Estimation of Hand Function
                     </p>
                 </a>
             </div>
             <div class="container" style="float: left;width: 18vw;padding:2%;margin-top: -3vw;margin-left: -2vw">
-                <a href="index.html">
+                <a href="index.html" style="text-decoration:none">
                     <p class="normal" style="color: #ffffff;text-align: center;">
                         Reinforcement Learning for the Control of a Pneumatic Hand Exoskeleton<br>
                     </p>
                 </a>
             </div>
             <div class="container" style="float: left;width: 20vw;padding:2%;margin-top: -3vw;margin-left: -2vw">
-                <a href="index.html">
+                <a href="index.html" style="text-decoration:none">
                     <p class="normal" style="color: #ffffff;text-align: center;">
                         Artificial Human-like Hand with Nonlinear Joint and Tendon Dynamics
                     </p>
                 </a>
             </div>
             <div class="container" style="float: left;width: 19vw;padding:2%;margin-top: -3vw;margin-left: -2vw">
-                <a href="index.html">
+                <a href="index.html" style="text-decoration:none">
                     <p class="normal" style="color: #ffffff;text-align: center;">
-                    Haptic Interfaces for Human-Robot Interaction and Teleoperation
-                </p>
+                        Haptic Interfaces for Human-Robot Interaction and Teleoperation
+                    </p>
                 </a>
             </div>
             <div class="container" style="float: left;width: 20vw;padding:2%;margin-top: -3vw;margin-left: -2vw">
-                <a href="index.html">
+                <a href="index.html" style="text-decoration:none">
                     <p class="normal" style="color: #ffffff;text-align: center;">
-                    Rigid and Soft Serial-Parallel Robot Design, Fabrication, and Control
-                </p>
+                        Rigid and Soft Serial-Parallel Robot Design, Fabrication, and Control
+                    </p>
                 </a>
             </div>
         </div>
@@ -425,5 +435,18 @@
         }
         slides[slideIndex - 1].style.display = "block";
         dots[slideIndex - 1].className += " active";
+    }
+    // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+            document.getElementById("navbar").style.padding = "10px 10px";
+            document.getElementById("bottom").style.fontSize = "0px";
+        } else {
+            document.getElementById("navbar").style.padding = "20px 10px";
+            document.getElementById("bottom").style.fontSize = "35px";
+
+        }
     }
 </script>
