@@ -281,11 +281,11 @@
 
     <div id="navbar">
         <a href="#default" id="bottom" style="line-height: 5vh;">SCROLL DOWN <br> FOR MORE</a>
-        </div>
+    </div>
     </div>
 
-    
-    <div style="position:relative;background-color:#282E34;width: 100vw;height:20vw;padding:5%">
+
+    <div id="bottom" style="position:relative;background-color:#282E34;width: 100vw;height:20vw;padding:5%">
         <div style="color:#ddd;text-align:center;padding:1vw 1vw;float:left">
             <p class="big" style="color:ffffff; font-size: 3vw;text-align: left;
             margin-left: 5vw;">
@@ -440,13 +440,19 @@
     window.onscroll = function () { scrollFunction() };
 
     function scrollFunction() {
+            // Landing Page Fade Out Sections
         if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
             document.getElementById("navbar").style.padding = "10px 10px";
             document.getElementById("bottom").style.opacity = "0";
         } else {
             document.getElementById("navbar").style.padding = "20px 10px";
             document.getElementById("bottom").style.opacity = "100";
+        }
 
+        if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+            document.getElementById("fade1").style.opacity = "0";
+        } else {
+            document.getElementById("fade1").style.opacity = "100";
         }
     }
 </script>
