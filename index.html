@@ -24,7 +24,6 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-
         }
 
         .bgimg-1 {
@@ -148,13 +147,13 @@
     </style>
 
 <body>
-    <div id="navbar">
+    <div id="navbar" style="margin-top:-1vh;">
         <a href="#default" id="logo">(SCROLL DOWN)</a>
-        <div id="navbar-right">
+        <!-- <div id="navbar-right">
             <a class="active" href="#home">Home</a>
             <a href="#contact">Contact</a>
             <a href="#about">About</a>
-        </div>
+        </div> -->
     </div>
     <div class="bgimg-1">
         <div class="caption">
@@ -240,7 +239,7 @@
     <div style="position:relative;background-color:#282E34;width: 100vw;">
         <div style="color:#ddd;text-align:center;padding:1vw 1vw;">
             <p class="big" style="color:ffffff; font-size: 3vw;margin-top: 5vw;text-align: center;
-            margin-left: 5vw;margin-top:-2vw">
+            margin-left: 5vw;margin-top:-1vw">
                 Selected Projects
             </p>
             <div class="container" style="float: left;width: 19vw;margin-left: 3vw;padding:2%;margin-top: -3vw;">
@@ -366,7 +365,7 @@
     showSlides(slideIndex);
 
     // Next/previous controls
-    function plusSlides(n) {
+    function plusSlides(n) {    
         showSlides(slideIndex += n);
     }
 
@@ -384,15 +383,17 @@
         if (n < 1) { slideIndex = slides.length }
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
-            boxes[i].style.display = "none";
-
+            boxes[i].style.display = "list-item";
+            boxes[i].style.listStyle = "square inside"
         }
         for (i = 0; i < dots.length; i++) {
             dots[i].className = dots[i].className.replace(" active", "");
         }
         slides[slideIndex - 1].style.display = "block";
+        boxes[slideIndex - 1].style.display = "block";
         dots[slideIndex - 1].className += " active";
     }
+
     // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
     window.onscroll = function () { scrollFunction() };
 
