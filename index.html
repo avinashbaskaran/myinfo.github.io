@@ -5,263 +5,279 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avinash Baskaran - Academic Portfolio</title>
     <style>
-        /* Basic Styling */
+        /* General Styling */
         body, html {
             margin: 0;
             padding: 0;
             font-family: 'Lato', sans-serif;
-            scroll-behavior: smooth;
+            display: flex;
+            overflow-x: hidden;
+            background-color: #fff; /* Light background theme */
         }
-        h1, h2, h3 {
+        /* Sidebar Styling */
+        .sidebar {
+            width: 250px;
+            background-color: #f8f9fa;
+            position: fixed;
+            height: 100%;
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sidebar img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 3px solid #343a40;
+        }
+        .sidebar h2, .sidebar h3 {
             color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .sidebar nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sidebar a {
+            color: #343a40;
+            padding: 10px 20px;
+            text-decoration: none;
+            width: 100%;
+            text-align: center;
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #e0e0e0;
+            color: #007bff;
+        }
+        .sidebar .social-links img {
+            width: 30px;
+            margin: 5px;
+        }
+        /* Main Content */
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            width: 100%;
+        }
+        h1, h2, h3, h4 {
+            color: #212529;
             text-align: center;
         }
         p {
-            color: #555;
-            text-align: center;
-            max-width: 90%;
+            color: #343a40;
+            max-width: 80%;
             margin: 10px auto;
-        }
-        /* Navbar */
-        #navbar {
-            background-color: #282E34;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 10px;
             text-align: center;
         }
-        #navbar a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 16px;
-        }
-        #navbar a:hover {
-            color: #ddd;
-        }
-        /* Intro Section */
-        .intro {
+        /* Hero Section */
+        .hero {
             height: 100vh;
             background: url('04_Images/Avinash_poster_edited3.png') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-        .intro h1 {
-            font-size: 2.5em;
-            margin: 0;
-        }
-        .intro p {
-            font-size: 1.2em;
-        }
-        .links img {
-            width: 35px;
-            margin: 10px;
-        }
-        /* Projects Section */
-        .projects {
-            padding: 40px 20px;
-            background-color: #1c2125;
-            color: #fff;
+            color: #212529;
             text-align: center;
         }
-        .project {
-            margin: 20px auto;
-            width: 95%;
-            max-width: 800px;
-            background-color: #333;
+        .hero h2 {
+            font-size: 3em;
+            font-weight: 700;
+            color: #333;
+        }
+        /* Keyword Section */
+        .keywords {
+            display: flex;
+            justify-content: center;
+            margin: 40px auto;
             padding: 20px;
+        }
+        .keyword {
+            flex: 1;
+            padding: 20px;
+            margin: 5px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
             border-radius: 5px;
+            text-align: center;
+            font-size: 1.2em;
+            color: #333;
+        }
+        /* Content Sections */
+        .section {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+            background-color: #fff;
+        }
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        .projects .project {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            margin: 10px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .projects .project:hover {
+            border-color: #007bff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         .carousel-container {
-            position: relative;
-            display: flex;
-            overflow: hidden;
-            width: 100%;
-            max-width: 100%;
-        }
-        .carousel {
             display: flex;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
         }
-        .carousel img {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            margin-right: 10px;
+        .carousel-container img {
+            max-width: 200px;
+            margin: 10px;
             scroll-snap-align: center;
             border-radius: 5px;
         }
-        .carousel-buttons {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-            pointer-events: none;
-        }
-        .carousel-button {
-            background-color: rgba(0, 0, 0, 0.5);
-            border: none;
-            color: #fff;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 50%;
-            pointer-events: all;
-        }
         /* Footer */
         footer {
-            background-color: #282E34;
-            color: #fff;
-            text-align: center;
+            background-color: #f8f9fa;
             padding: 20px;
+            text-align: center;
+            color: #343a40;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 40px;
         }
         /* Responsive Design */
         @media (max-width: 768px) {
-            .intro h1 {
+            .sidebar {
+                width: 200px;
+            }
+            .content {
+                margin-left: 200px;
+            }
+            .hero h2 {
                 font-size: 2em;
             }
-            .intro p {
-                font-size: 1em;
-            }
-            .links img {
-                width: 30px;
-                margin: 5px;
-            }
-            #navbar a {
-                margin: 0 5px;
-                font-size: 14px;
-            }
-            .carousel img {
-                max-width: 200px;
-            }
-            .carousel-button {
-                padding: 5px;
+            .carousel-container img {
+                max-width: 150px;
             }
         }
         @media (max-width: 480px) {
-            .intro {
-                padding: 10px;
+            .sidebar {
+                width: 150px;
+                padding-top: 10px;
             }
-            .intro h1 {
+            .sidebar h2, .sidebar h3 {
+                font-size: 1em;
+            }
+            .sidebar a {
+                padding: 8px 10px;
+                font-size: 14px;
+            }
+            .content {
+                margin-left: 150px;
+            }
+            .hero h2 {
                 font-size: 1.5em;
-            }
-            .intro p {
-                font-size: 0.9em;
-            }
-            .links img {
-                width: 25px;
-                margin: 5px;
-            }
-            #navbar a {
-                margin: 0 2px;
-                font-size: 12px;
-            }
-            .project {
-                padding: 10px;
-            }
-            .carousel img {
-                max-width: 150px;
-            }
-            .carousel-button {
-                padding: 3px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <div id="navbar">
-        <a href="#intro">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="#cv">CV</a>
-        <a href="#contact">Contact</a>
-    </div>
-
-    <!-- Intro Section -->
-    <section class="intro" id="intro">
-        <h1>Avinash Baskaran</h1>
-        <p>Ph.D. Candidate, Mechanical Engineering, Auburn University</p>
-        <div class="links">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <img src="04_Images/Avinash_profile.jpg" alt="Profile Picture">
+        <h2>Avinash Baskaran</h2>
+        <h3>Ph.D. Candidate, Mechanical Engineering</h3>
+        <nav>
+            <a href="#hero">Home</a>
+            <a href="#cv">CV</a>
+            <a href="#projects">Projects</a>
+            <a href="#publications">Publications</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="social-links">
             <a href="https://www.linkedin.com/in/avinashbaskaran/"><img src="04_Images/linkedin.png" alt="LinkedIn"></a>
             <a href="mailto:baskaran.avinash@gmail.com"><img src="04_Images/gmail.png" alt="Email"></a>
             <a href="https://scholar.google.com/citations?user=0ov7QL4AAAAJ&hl=en&oi=ao"><img src="04_Images/Google_Scholar_logo.png" alt="Google Scholar"></a>
             <a href="https://github.com/avinashbaskaran?tab=repositories"><img src="04_Images/github.png" alt="GitHub"></a>
         </div>
-    </section>
+    </div>
 
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <h2>Selected Projects</h2>
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <h2>Wearable Rehabilitation Neuromuscular<br/>Robotics Engineering Interfaces</h2>
+        </section>
 
-        <!-- Project 1 -->
-        <div class="project">
-            <h3>Neuromuscular Modeling</h3>
-            <p>Estimation of Hand Function</p>
-            <div class="carousel-container">
-                <button class="carousel-button prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
-                <div class="carousel">
+        <!-- Keywords Section -->
+        <section class="keywords">
+            <div class="keyword">Wearable Robotics</div>
+            <div class="keyword">Rehabilitation Engineering</div>
+            <div class="keyword">Neuromuscular Interfaces</div>
+        </section>
+
+        <!-- CV Section -->
+        <section class="section" id="cv">
+            <h2>Curriculum Vitae</h2>
+            <p>Download my CV to see detailed information about my education, research, publications, and professional experience.</p>
+            <a href="CV.pdf" class="btn">Download CV</a>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section projects" id="projects">
+            <h2>Selected Projects</h2>
+
+            <!-- Project 1 -->
+            <div class="project">
+                <h3>Neuromuscular Modeling</h3>
+                <p>Estimation of Hand Function</p>
+                <div class="carousel-container">
                     <img src="04_Images/project1_1.jpg" alt="Project 1 Image 1">
                     <img src="04_Images/project1_2.jpg" alt="Project 1 Image 2">
                     <img src="04_Images/project1_3.jpg" alt="Project 1 Image 3">
                 </div>
-                <button class="carousel-button next" onclick="scrollCarousel(this, 1)">&#10095;</button>
             </div>
-        </div>
 
-        <!-- Project 2 -->
-        <div class="project">
-            <h3>Reinforcement Learning</h3>
-            <p>Control of Pneumatic Hand Exoskeleton</p>
-            <div class="carousel-container">
-                <button class="carousel-button prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
-                <div class="carousel">
+            <!-- Project 2 -->
+            <div class="project">
+                <h3>Reinforcement Learning</h3>
+                <p>Control of Pneumatic Hand Exoskeleton</p>
+                <div class="carousel-container">
                     <img src="04_Images/project2_1.jpg" alt="Project 2 Image 1">
                     <img src="04_Images/project2_2.jpg" alt="Project 2 Image 2">
                     <img src="04_Images/project2_3.jpg" alt="Project 2 Image 3">
                 </div>
-                <button class="carousel-button next" onclick="scrollCarousel(this, 1)">&#10095;</button>
             </div>
-        </div>
+        </section>
 
-        <!-- Project 3 -->
-        <div class="project">
-            <h3>Artificial Human-like Hand</h3>
-            <p>Nonlinear Joint and Tendon Dynamics</p>
-            <div class="carousel-container">
-                <button class="carousel-button prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
-                <div class="carousel">
-                    <img src="04_Images/project3_1.jpg" alt="Project 3 Image 1">
-                    <img src="04_Images/project3_2.jpg" alt="Project 3 Image 2">
-                    <img src="04_Images/project3_3.jpg" alt="Project 3 Image 3">
-                </div>
-                <button class="carousel-button next" onclick="scrollCarousel(this, 1)">&#10095;</button>
-            </div>
-        </div>
-    </section>
+        <!-- Publications Section -->
+        <section class="section" id="publications">
+            <h2>Publications</h2>
+            <p>Browse my latest publications related to wearable robotics, neuromuscular interfaces, and more.</p>
+            <ul>
+                <li><a href="#">Title of Publication 1</a> - Journal Name (Year)</li>
+                <li><a href="#">Title of Publication 2</a> - Journal Name (Year)</li>
+            </ul>
+        </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Avinash Baskaran</p>
-    </footer>
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 Avinash Baskaran | Built with HTML, CSS, and JavaScript</p>
+        </footer>
+    </div>
 
-    <script>
-        // Function to scroll carousel
-        function scrollCarousel(button, direction) {
-            const carousel = button.parentElement.querySelector('.carousel');
-            const scrollAmount = carousel.clientWidth / 2; // Adjust scroll amount
-            carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
-        }
-    </script>
 </body>
 </html>
