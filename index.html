@@ -11,8 +11,8 @@
             padding: 0;
             font-family: 'Lato', sans-serif;
             overflow-x: hidden;
-            background-color: #fff; /* White background */
-            color: #333; /* Dark text */
+            background-color: #fff;
+            color: #333;
         }
         /* Sidebar Styling */
         .sidebar {
@@ -46,45 +46,30 @@
             margin-bottom: 20px;
             line-height: 1.4;
         }
-        .sidebar nav {
-            width: 100%;
-        }
-        .sidebar a {
-            display: block;
-            color: #000;
-            padding: 0px;
-            text-decoration: none;
-            margin: 0px 0;
-            border-radius: 0px;
-            font-size: 0.0em;
-            background-color: #fff; /* Light gray background */
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .sidebar a:hover {
-            background-color: #fff ;
-            color: #fff;
-        }
         .social-links {
-            margin-top: 1px;
+            margin-top: 15px;
             display: flex;
-            gap: 1%;
+            gap: 10px;
         }
         .social-links img {
-            width: 100%; /* Set a consistent width */
-            object-fit: contain; /* Maintain aspect ratio */
-            transition: transform 0.1s;
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+            transition: transform 0.3s;
         }
         .social-links img:hover {
-            transform: scale(1.5); /* Slightly enlarge on hover */
+            transform: scale(1.1);
         }
         /* Main Content */
         .content {
             margin-left: 270px;
             padding: 30px;
             background-color: #fff;
+            display: flex;
+            flex-direction: column;
         }
         h1, h2, h3 {
-            color: #000; /* Black text */
+            color: #000;
             text-align: center;
         }
         p {
@@ -106,44 +91,52 @@
             position: absolute;
             bottom: 20px;
             left: 20px;
-            background: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
+            background: rgba(255, 255, 255, 0.8);
             padding: 15px;
             border-radius: 10px;
             text-align: left;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
         }
-        .hero h4 {
-            font-size: 1.2em;
-            font-weight: bold;
-            margin: 0;
-            color: #000
+        .projects-container {
+            display: flex;
+            position: relative;
+            margin-top: 30px; /* Space after hero section */
         }
-        .hero p {
-            font-size: 1em;
-            margin: 5px 0;
+        /* Timeline */
+        .timeline {
+            position: absolute;
+            left: -30px;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background: #f0f0f0;
+        }
+        .timeline-marker {
+            width: 15px;
+            height: 15px;
+            background: #333;
+            border-radius: 50%;
+            margin: 10px auto;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .timeline-marker.active {
+            transform: scale(1.3);
+            background: #007bff;
         }
         /* Content Sections */
-        .section {
+        .projects {
+            margin-left: 40px;
             padding: 5px 20px;
             max-width: 900px;
-            margin: auto;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-        .section h2 {
-            font-size: 1.8em;
-            margin-bottom: 15px;
-            color: #000; /* Black text */
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 5px;
         }
         .projects .project {
             background-color: #f9f9f9;
             padding: 15px;
             border: 1px solid #e0e0e0;
-            margin: 10px;
+            margin: 40px 0;
             border-radius: 5px;
             transition: 0.3s;
         }
@@ -171,7 +164,7 @@
             background-color: #f0f0f0;
             padding: 20px;
             text-align: center;
-            color: #000; /* Black text */
+            color: #000;
             border-top: 2px solid #000;
         }
         /* Responsive Design */
@@ -196,6 +189,10 @@
             .content {
                 margin-left: 0;
                 padding: 15px;
+                display: block;
+            }
+            .timeline {
+                display: none; /* Hide timeline on small screens */
             }
             .social-links {
                 justify-content: center;
@@ -208,7 +205,7 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <img src="04_Images/Avinash_profile.jpg" alt="Profile Picture">
-        <h3>    AVINASH BASKARAN</h3><h4></h4> 
+        <h3>Avinash Baskaran</h3>
         <p>I am a Ph.D. Candidate in Mechanical Engineering at Auburn University. My focus is neuromuscular interfaces.</p>
         <div class="social-links">
             <a href="https://www.linkedin.com/in/avinashbaskaran/"><img src="04_Images/linkedin.png" alt="LinkedIn"></a>
@@ -223,39 +220,46 @@
         <!-- Hero Section -->
         <section class="hero" id="hero">
             <div class="education-box">
-                <h4>Education</h4>
-                <p>Ph.D., Mechanical Engineering, Auburn University, 2022–Present<br>
+                <p>Education<br>
+                Ph.D., Mechanical Engineering, Auburn University, 2022–Present<br>
                 M.S., Mechanical Engineering, Auburn University, 2020–2022<br>
                 B.S., Biomedical Engineering, University of Texas at Austin, 2015–2020</p>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section class="section projects" id="projects">
-            <h4>Projects</h4>
-
-            <!-- Project 1 -->
-            <div class="project">
-                <h3>Neuromuscular Modeling</h3>
-                <p>Estimation of Hand Function</p>
-                <div class="carousel-container">
-                    <img src="04_Images/project1_1.jpg" alt="Project 1 Image 1">
-                    <img src="04_Images/project1_2.jpg" alt="Project 1 Image 2">
-                    <img src="04_Images/project1_3.jpg" alt="Project 1 Image 3">
-                </div>
+        <!-- Projects Section with Timeline -->
+        <div class="projects-container">
+            <div class="timeline" style="margin-top: 20px;">
+                <div class="timeline-marker" id="marker1"></div>
+                <div class="timeline-marker" id="marker2"></div>
+                <div class="timeline-marker" id="marker3"></div>
+                <!-- Add more markers if needed -->
             </div>
 
-            <!-- Project 2 -->
-            <div class="project">
-                <h3>Reinforcement Learning</h3>
-                <p>Control of Pneumatic Hand Exoskeleton</p>
-                <div class="carousel-container">
-                    <img src="04_Images/project2_1.jpg" alt="Project 2 Image 1">
-                    <img src="04_Images/project2_2.jpg" alt="Project 2 Image 2">
-                    <img src="04_Images/project2_3.jpg" alt="Project 2 Image 3">
+            <section class="projects">
+                <div class="project" id="project1">
+                    <h3>Neuromuscular Modeling</h3>
+                    <p>Estimation of Hand Function<br><br><br><br><br><br><br><br><br><br>   </p>
+                    <div class="carousel-container">
+                        <img src="04_Images/project1_1.jpg" alt="Project 1 Image 1">
+                        <img src="04_Images/project1_2.jpg" alt="Project 1 Image 2">
+                        <img src="04_Images/project1_3.jpg" alt="Project 1 Image 3">
+                    </div>
                 </div>
-            </div>
-        </section>
+
+                <div class="project" id="project2">
+                    <h3>Reinforcement Learning</h3>
+                    <p>Control of Pneumatic Hand Exoskeleton</p>
+                    <div class="carousel-container">
+                        <img src="04_Images/project2_1.jpg" alt="Project 2 Image 1">
+                        <img src="04_Images/project2_2.jpg" alt="Project 2 Image 2">
+                        <img src="04_Images/project2_3.jpg" alt="Project 2 Image 3">
+                    </div>
+                </div>
+
+                <!-- Add more project sections if needed -->
+            </section>
+        </div>
 
         <!-- Publications Section -->
         <section class="section" id="publications">
@@ -272,6 +276,22 @@
             <p>&copy; 2024 Avinash Baskaran | Built with HTML, CSS, and JavaScript</p>
         </footer>
     </div>
+
+    <!-- JavaScript for Timeline Animation -->
+    <script>
+        document.addEventListener("scroll", function() {
+            const projects = document.querySelectorAll(".project");
+            const markers = document.querySelectorAll(".timeline-marker");
+
+            projects.forEach((project, index) => {
+                const rect = project.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                    markers.forEach(marker => marker.classList.remove("active"));
+                    markers[index].classList.add("active");
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
