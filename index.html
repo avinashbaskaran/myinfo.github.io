@@ -21,7 +21,7 @@
             position: fixed;
             height: 100%;
             padding: 20px;
-            box-shadow: 2px 0 10px #fff;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -35,25 +35,13 @@
             margin-bottom: 15px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        .sidebar h4 {
-            font-size: 1.1em;
-            font-weight: bold;
-            margin-bottom: 5px;
-            text-align: left;
-        }
-        .sidebar p {
-            font-size: 0.9em;
-            margin-bottom: 20px;
-            line-height: 1.4;
-        }
         .social-links {
             margin-top: 15px;
             display: flex;
             gap: 10px;
         }
         .social-links img {
-            width: 30px;
-            height: 30px;
+            width: 50%;
             object-fit: contain;
             transition: transform 0.3s;
         }
@@ -100,23 +88,25 @@
         .projects-container {
             display: flex;
             position: relative;
-            margin-top: 30px; /* Space after hero section */
+            margin-top: 30px;
         }
         /* Timeline */
         .timeline {
             position: absolute;
-            left: -30px;
+            left: 10px;
             top: 0;
             bottom: 0;
-            width: 5px;
-            background: #f0f0f0;
+            width: 2px;
+            background: #000;
         }
         .timeline-marker {
+            position: absolute;
+            left: -8px;
             width: 15px;
             height: 15px;
             background: #333;
             border-radius: 50%;
-            margin: 10px auto;
+            margin-top: 20px;
             transition: transform 0.3s, background-color 0.3s;
         }
         .timeline-marker.active {
@@ -138,12 +128,18 @@
             border: 1px solid #e0e0e0;
             margin: 40px 0;
             border-radius: 5px;
-            transition: 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
+            position: relative;
+            transform: scale(1);
         }
-        .projects .project:hover {
-            background-color: #f0f0f0;
-            border-color: #000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        .projects .project::before {
+            content: '';
+            position: absolute;
+            left: -40px;
+            width: 2px;
+            height: 100%;
+            background: #000;
+            top: 0;
         }
         .carousel-container {
             display: flex;
@@ -229,17 +225,12 @@
 
         <!-- Projects Section with Timeline -->
         <div class="projects-container">
-            <div class="timeline" style="margin-top: 20px;">
-                <div class="timeline-marker" id="marker1"></div>
-                <div class="timeline-marker" id="marker2"></div>
-                <div class="timeline-marker" id="marker3"></div>
-                <!-- Add more markers if needed -->
-            </div>
+            <div class="timeline" style="margin-top: 20px;"></div>
 
             <section class="projects">
                 <div class="project" id="project1">
                     <h3>Neuromuscular Modeling</h3>
-                    <p>Estimation of Hand Function<br><br><br><br><br><br><br><br><br><br>   </p>
+                    <p>Estimation of Hand Function</p>
                     <div class="carousel-container">
                         <img src="04_Images/project1_1.jpg" alt="Project 1 Image 1">
                         <img src="04_Images/project1_2.jpg" alt="Project 1 Image 2">
@@ -256,20 +247,8 @@
                         <img src="04_Images/project2_3.jpg" alt="Project 2 Image 3">
                     </div>
                 </div>
-
-                <!-- Add more project sections if needed -->
             </section>
         </div>
-
-        <!-- Publications Section -->
-        <section class="section" id="publications">
-            <h2>Publications</h2>
-            <ul>
-                <li><a href="#">Neuromechanical Probabilistic Models for Characterizing Mild Traumatic Brain Injury</a> - Journal of Neural Engineering, 2024</li>
-                <li><a href="#">Neuromechanics-Relaxed Passivity-based Stochastic Iterative Learning Control</a> - Control Systems Society Letters, 2024</li>
-                <li><a href="#">Synthesizing Cognitive Human-Robot Interaction Policies</a> - Intl. Conf. on Robotics and Automation, 2024</li>
-            </ul>
-        </section>
 
         <!-- Footer -->
         <footer>
@@ -277,17 +256,26 @@
         </footer>
     </div>
 
-    <!-- JavaScript for Timeline Animation -->
+    <!-- JavaScript for Timeline and Project Animation -->
     <script>
         document.addEventListener("scroll", function() {
             const projects = document.querySelectorAll(".project");
-            const markers = document.querySelectorAll(".timeline-marker");
+            const windowHeight = window.innerHeight;
 
             projects.forEach((project, index) => {
                 const rect = project.getBoundingClientRect();
-                if (rect.top < window.innerHeight && rect.bottom >= 0) {
-                    markers.forEach(marker => marker.classList.remove("active"));
-                    markers[index].classList.add("active");
+                const projectCenter = rect.top + rect.height / 2;
+                const screenCenter = windowHeight / 2;
+                const marker = document.querySelectorAll(".timeline-marker")[index];
+
+                if (Math.abs(screenCenter - projectCenter) < 150) {
+                    project.style.backgroundColor = '#e0e0e0';
+                    project.style.transform = 'scale(1.1)';
+                    marker.classList.add("active");
+                } else {
+                    project.style.backgroundColor = '#f9f9f9';
+                    project.style.transform = 'scale(1)';
+                    marker.classList.remove("active");
                 }
             });
         });
