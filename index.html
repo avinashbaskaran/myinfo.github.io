@@ -30,7 +30,7 @@
         }
         nav a {
             color: #000;
-            text-deco   ration: none;
+            text-decoration: none;
             padding: 10px 15px;
             margin: 0 5px;
             font-size: 14px;
@@ -333,7 +333,16 @@
         padding: 5px 10px;
         border-radius: 5px;
     }
-
+    h2.section-banner {
+        font-size: 2em;
+        font-weight: bold;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        margin: 0 auto 30px; /* Adds space below the heading */
+        background-color: #333; /* Default background color */
+        border-radius: 8px;
+    }
         
     
     </style>
@@ -378,7 +387,7 @@
         <div class="projects-container" id="projects">
             <div class="timeline" style="margin-top: 20px;"></div>
             <section class="projects">
-                <h2>Projects</h2>
+                <h2 class="section-banner projects-banner">Projects</h2>
                 <div class="project" id="project1">
                     <h4>Neuromuscular State Estimation via Space-By-Time Neural Signal Decomposition</h4>
                     <div class="carousel-container">
@@ -454,7 +463,7 @@
 <!-- Experience Section -->
 <!-- Experience Section -->
 <section id="experience">
-    <h2>Experience</h2>
+    <h2 class="section-banner projects-banner">Experience</h2>
 
     <!-- Experience Item 1 -->
     <div class="experience-item">
@@ -515,13 +524,13 @@
 
         <!-- Resources Section -->
         <section id="resources">
-            <h2>Resources</h2>
+            <h2 class="section-banner projects-banner">Resources</h2>
             <p>This section is currently under construction.</p>
         </section>
 
         <!-- News/Media Section -->
         <section id="news">
-            <h2>News/Media</h2>
+            <h2 class="section-banner projects-banner">News/Media</h2>
             <p>This section is currently under construction.</p>
         </section>
 
