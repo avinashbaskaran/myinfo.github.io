@@ -15,13 +15,40 @@
             color: #333;
         }
 
+        /* Navbar Styling */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 10px 0;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 5px;
+            font-size: 14px;
+            transition: background 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+        }
+
         /* Sidebar Styling */
         .sidebar {
             width: 250px;
             background-color: #fff;
             position: fixed;
             height: 100%;
-            padding: 20px;
+            padding: 80px 20px 20px;
             box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
@@ -53,6 +80,7 @@
         .content {
             margin-left: 270px;
             padding: 30px;
+            padding-top: 80px; /* Add padding to avoid overlap with navbar */
             background-color: #fff;
             display: flex;
             flex-direction: column;
@@ -256,11 +284,19 @@
 </head>
 <body>
 
+    <!-- Navbar -->
+    <nav>
+        <a href="#hero">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#resources">Resources</a>
+        <a href="#news">News/Media</a>
+        <a href="mailto:baskaran.avinash@gmail.com">Contact</a>
+    </nav>
+
     <!-- Sidebar -->
     <div class="sidebar">
         <img src="04_Images/Avinash_profile.jpg" alt="Profile Picture">
-        <h2><strong>Avinash Baskaran</strong></h2>
-        <p>I'm a researcher and engineer focused on <b><i>computational neuromechanics</i></b></p>
+        <p>I'm Avinash Baskaran, <br> a researcher and engineer focused on <b><i>computational neuromechanics</i></b></p>
         <div class="social-links">
             <a href="https://www.linkedin.com/in/avinashbaskaran/"><img src="04_Images/linkedin.png" alt="LinkedIn"></a>
             <a href="mailto:baskaran.avinash@gmail.com"><img src="04_Images/gmail.png" alt="Email"></a>
@@ -274,15 +310,15 @@
         <!-- Hero Section -->
         <section class="hero" id="hero">
             <div class="education-box">
-                <p>Education<br>
+                <p>
                 Ph.D., Mechanical Engineering, Auburn University, 2022–Present<br>
                 M.S., Mechanical Engineering, Auburn University, 2020–2022<br>
                 B.S., Biomedical Engineering, University of Texas at Austin, 2015–2020</p>
             </div>
         </section>
 
-        <!-- Projects Section with Timeline -->
-        <div class="projects-container">
+        <!-- Projects Section -->
+        <div class="projects-container" id="projects">
             <div class="timeline" style="margin-top: 20px;"></div>
 
             <section class="projects">
@@ -292,9 +328,9 @@
                         <button class="carousel-button left">&lt;</button>
                         <div class="carousel-slide">
                             <img src="04_Images/project1_1.jpg" alt="Project 1 Image 1" class="active">
-                            <span class="caption">Theory: coorrelating intent with spatial 
-                                synergy structure, effort with activation coefficients,
-                                and fatigue with temporal synergy structure</span>
+                            <span class="caption">Theory: intent, effort, and fatigue
+                                are coorrelated with spatial, activation, and temporal 
+                                synergy structure</span>
                         </div>
                         <div class="carousel-slide">
                             <img src="04_Images/project1_2.jpg" alt="Project 1 Image 2">
@@ -302,14 +338,73 @@
                         </div>
                         <div class="carousel-slide">
                             <img src="04_Images/project1_3.jpg" alt="Project 1 Image 3">
-                            <span class="caption">Result: high-accuracy linear regression between intent classes (power grasp, lateral pinch, two finger pinch, and three finger pinch) </span>
+                            <span class="caption">Result: high-accuracy estimation between intent classes (power grasp, lateral-, 2 finger-, and 3 finger-pinch) </span>
                         </div>
                     <button class="carousel-button right">&gt;</button>
                     </div>
                 </div>
-                <!-- Repeat similar structure for other projects -->
+
+
+                <div class="project" id="project1">
+                    <h4>Neuromechanical Model-free Epistemic Risk Guided Exploration
+                        (NeuroMERGE) for Safe Autonomy in Human-Robot Interaction</h4>
+                    <div class="carousel-container">
+                        <button class="carousel-button left">&lt;</button>
+                        <div class="carousel-slide">
+                            <img src="04_Images/project2_1.jpg" alt="Project 2 Image 1" class="active">
+                            <span class="caption">Theory: intent, effort, and fatigue
+                                are coorrelated with spatial, activation, and temporal 
+                                synergy structure</span>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="04_Images/project2_2.jpg" alt="Project 2 Image 2">
+                            <span class="caption">Experiment: IRB-approved human subject study with a commercial-off-the-shelf hand exoskeleton</span>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="04_Images/project2_3.jpg" alt="Project 2 Image 3">
+                            <span class="caption">Result: high-accuracy estimation between intent classes (power grasp, lateral-, 2 finger-, and 3 finger-pinch) </span>
+                        </div>
+                    <button class="carousel-button right">&gt;</button>
+                    </div>
+                </div>
+
+
+                <div class="project" id="project1">
+                    <h4>Neuromechanical Generative Model-Predictive Control of a Soft Hand
+                        Exoskeleton for Assistance in Functional Tasks</h4>
+                    <div class="carousel-container">
+                        <button class="carousel-button left">&lt;</button>
+                        <div class="carousel-slide">
+                            <img src="04_Images/project3_1.jpg" alt="Project 3 Image 1" class="active">
+                            <span class="caption">Theory: intent, effort, and fatigue
+                                are coorrelated with spatial, activation, and temporal 
+                                synergy structure</span>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="04_Images/project3_2.jpg" alt="Project 3 Image 2">
+                            <span class="caption">Experiment: IRB-approved human subject study with a commercial-off-the-shelf hand exoskeleton</span>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="04_Images/project3_3.jpg" alt="Project 3 Image 3">
+                            <span class="caption">Result: high-accuracy estimation between intent classes (power grasp, lateral-, 2 finger-, and 3 finger-pinch) </span>
+                        </div>
+                    <button class="carousel-button right">&gt;</button>
+                    </div>
+                </div>
             </section>
         </div>
+
+        <!-- Resources Section -->
+        <section id="resources">
+            <h2>Resources</h2>
+            <p>This section is currently under construction.</p>
+        </section>
+
+        <!-- News/Media Section -->
+        <section id="news">
+            <h2>News/Media</h2>
+            <p>This section is currently under construction.</p>
+        </section>
 
         <!-- Footer -->
         <footer>
