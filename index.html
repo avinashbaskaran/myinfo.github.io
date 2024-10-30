@@ -14,6 +14,7 @@
             background-color: #fff;
             color: #333;
         }
+
         /* Sidebar Styling */
         .sidebar {
             width: 250px;
@@ -26,7 +27,6 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            transition: width 0.3s;
             border-right: 2px solid #fff;
         }
         .sidebar img {
@@ -48,6 +48,7 @@
         .social-links img:hover {
             transform: scale(1.1);
         }
+
         /* Main Content */
         .content {
             margin-left: 270px;
@@ -65,6 +66,7 @@
             max-width: 800px;
             margin: 10px auto;
         }
+
         /* Hero Section */
         .hero {
             height: 70vh;
@@ -85,35 +87,15 @@
             text-align: left;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
         }
+
+        /* Projects Section */
         .projects-container {
             display: flex;
             position: relative;
             margin-top: 30px;
         }
-        /* Timeline */
-        .timeline {
-            position: absolute;
-            left: 10px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: #000;
-        }
-        .timeline-marker {
-            position: absolute;
-            left: -8px;
-            width: 15px;
-            height: 15px;
-            background: #333;
-            border-radius: 50%;
-            margin-top: 20px;
-            transition: transform 0.3s, background-color 0.3s;
-        }
-        .timeline-marker.active {
-            transform: scale(1.3);
-            background: #007bff;
-        }
-        /* Content Sections */
+
+        /* Project Cards */
         .projects {
             margin-left: 40px;
             padding: 5px 20px;
@@ -132,6 +114,13 @@
             position: relative;
             transform: scale(1);
         }
+
+        .projects .project:hover {
+            background-color: #e0e0e0;
+            transform: scale(1.1);
+            z-index: 10;
+        }
+
         .projects .project::before {
             content: '';
             position: absolute;
@@ -141,20 +130,48 @@
             background: #000;
             top: 0;
         }
+
+        /* Carousel */
         .carousel-container {
             display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
             gap: 10px;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
         }
         .carousel-container img {
-            max-width: 150px;
+            max-width: 100px;
             height: auto;
-            margin: 10px;
-            scroll-snap-align: center;
+            opacity: 0.5;
+            transition: all 0.3s;
+            cursor: pointer;
             border-radius: 5px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin: 0 5px;
         }
+        .carousel-container img.active {
+            max-width: 300px;
+            opacity: 1;
+            z-index: 10;
+        }
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 20;
+            border: none;
+            border-radius: 5px;
+        }
+        .carousel-button.left {
+            left: 0;
+        }
+        .carousel-button.right {
+            right: 0;
+        }
+
         /* Footer */
         footer {
             background-color: #f0f0f0;
@@ -163,6 +180,7 @@
             color: #000;
             border-top: 2px solid #000;
         }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .sidebar {
@@ -187,12 +205,6 @@
                 padding: 15px;
                 display: block;
             }
-            .timeline {
-                display: none; /* Hide timeline on small screens */
-            }
-            .social-links {
-                justify-content: center;
-            }
         }
     </style>
 </head>
@@ -201,8 +213,8 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <img src="04_Images/Avinash_profile.jpg" alt="Profile Picture">
-        <p><strong>I'm Avinash Baskaran</strong></p>
-        <p>I'm a researcher and engineer focused on <b><i>computational neuromechanics</i></b>.</p>
+        <h2><strong>Avinash Baskaran</strong></h2>
+        <p>I'm a researcher and engineer focused on <b><i>computational neuromechanics</i></b></p>
         <div class="social-links">
             <a href="https://www.linkedin.com/in/avinashbaskaran/"><img src="04_Images/linkedin.png" alt="LinkedIn"></a>
             <a href="mailto:baskaran.avinash@gmail.com"><img src="04_Images/gmail.png" alt="Email"></a>
@@ -232,21 +244,14 @@
                     <h3>Neuromuscular Modeling</h3>
                     <p>Estimation of Hand Function</p>
                     <div class="carousel-container">
-                        <img src="04_Images/project1_1.jpg" alt="Project 1 Image 1">
+                        <button class="carousel-button left">&lt;</button>
+                        <img src="04_Images/project1_1.jpg" alt="Project 1 Image 1" class="active">
                         <img src="04_Images/project1_2.jpg" alt="Project 1 Image 2">
                         <img src="04_Images/project1_3.jpg" alt="Project 1 Image 3">
+                        <button class="carousel-button right">&gt;</button>
                     </div>
                 </div>
-
-                <div class="project" id="project2">
-                    <h3>Reinforcement Learning</h3>
-                    <p>Control of Pneumatic Hand Exoskeleton</p>
-                    <div class="carousel-container">
-                        <img src="04_Images/project2_1.jpg" alt="Project 2 Image 1">
-                        <img src="04_Images/project2_2.jpg" alt="Project 2 Image 2">
-                        <img src="04_Images/project2_3.jpg" alt="Project 2 Image 3">
-                    </div>
-                </div>
+                <!-- Repeat similar structure for other projects -->
             </section>
         </div>
 
@@ -256,30 +261,30 @@
         </footer>
     </div>
 
-    <!-- JavaScript for Timeline and Project Animation -->
+    <!-- JavaScript for Carousel Navigation -->
     <script>
-        document.addEventListener("scroll", function() {
-            const projects = document.querySelectorAll(".project");
-            const windowHeight = window.innerHeight;
+        document.querySelectorAll('.carousel-container').forEach(carousel => {
+            const images = carousel.querySelectorAll('img');
+            let currentIndex = 0;
 
-            projects.forEach((project, index) => {
-                const rect = project.getBoundingClientRect();
-                const projectCenter = rect.top + rect.height / 2;
-                const screenCenter = windowHeight / 2;
-                const marker = document.querySelectorAll(".timeline-marker")[index];
+            function updateCarousel() {
+                images.forEach((img, index) => {
+                    img.classList.toggle('active', index === currentIndex);
+                });
+            }
 
-                if (Math.abs(screenCenter - projectCenter) < 150) {
-                    project.style.backgroundColor = '#e0e0e0';
-                    project.style.transform = 'scale(1.1)';
-                    marker.classList.add("active");
-                } else {
-                    project.style.backgroundColor = '#f9f9f9';
-                    project.style.transform = 'scale(1)';
-                    marker.classList.remove("active");
-                }
+            carousel.querySelector('.left').addEventListener('click', () => {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+                updateCarousel();
             });
+
+            carousel.querySelector('.right').addEventListener('click', () => {
+                currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+                updateCarousel();
+            });
+
+            updateCarousel(); // Initialize carousel
         });
     </script>
-
 </body>
 </html>
