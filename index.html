@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   <div class="slice slice1">
      <div class="slice-title">Humin Labs LLC</div>
-    <div class="slice-subtitle">(hover to learn more)</div>
+    <div class="slice-subtitle">hover to learn more</div>
 
     <div class="slice-content" id="content1">[carousel1]</div>
     
@@ -141,12 +141,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   <div class="slice slice2">
     <div class="slice-title">Agrotronic Systems LLC</div>
-    <div class="slice-subtitle">(hover to learn more)</div>
+    <div class="slice-subtitle">hover to learn more</div>
     <div class="slice-content" id="content2">[carousel2]</div>
   </div>
   <div class="slice slice3">    
   <div class="slice-title">Precision Agronomy <br> Research Center</div>
-  <div class="slice-subtitle">(hover to learn more)</div>
+  <div class="slice-subtitle">hover to learn more</div>
     <div class="slice-content-disappear" id="content3-default">
         <img src="static/assets/img/PARC_default.png" alt="..." width="50%">
     </div>        
@@ -178,15 +178,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /* --------------------- Slice Backgrounds --------------------- */
 .slice1 {
-  clip-path: polygon(0% 0%, 33.33% 0%, 0% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 40.33% 0%, 0% 100%, 0% 100%);
   background-image: url('static/assets/img/slice_1.png');
 }
 .slice2 {
-  clip-path: polygon(33.33% 0%, 66.66% 0%, 33.33% 100%, 0% 100%);
+  clip-path: polygon(40.33% 0%, 75.66% 0%, 40.33% 100%, 0% 100%);
   background-image: url('static/assets/img/slice_2.png');
 }
 .slice3 {
-  clip-path: polygon(66.66% 0%, 100% 0%, 100% 100%, 33.66% 100%);
+  clip-path: polygon(75.66% 0%, 100% 0%, 100% 100%, 40.66% 100%);
   background-image: url('static/assets/img/slice_3.png');
 }
 
@@ -207,9 +207,9 @@ document.addEventListener("DOMContentLoaded", function () {
   transition: opacity 0.5s ease-in-out;
 }
 
-.slice1 .slice-title { left: 15%; transform: translateX(-50%); }
-.slice2 .slice-title { left: 42%; transform: translateX(-50%); }
-.slice3 .slice-title { left: 81%; transform: translateX(-50%); }
+.slice1 .slice-title {left: 15%; top:20%; transform: translateX(-50%); }
+.slice2 .slice-title { left: 48%; top:20%; transform: translateX(-50%); }
+.slice3 .slice-title { left: 83%; transform: translateX(-50%); }
 
 body:not([data-hover]) .slice-title,
 body[data-hover="slice1"] .slice1 .slice-title,
@@ -232,9 +232,9 @@ body[data-hover="slice3"] .slice3 .slice-title {
   opacity: 1;
 }
 
-.slice1 .slice-subtitle { top: 27%; left: 15%; transform: translateX(-50%); }
-.slice2 .slice-subtitle { top: 27%; left: 42%; transform: translateX(-50%); }
-.slice3 .slice-subtitle { top: 37%; left: 81%; transform: translateX(-50%); }
+.slice1 .slice-subtitle { top: 30%; left: 15%; transform: translateX(-50%); }
+.slice2 .slice-subtitle { top: 30%; left: 45%; transform: translateX(-50%); }
+.slice3 .slice-subtitle { top: 37%; left: 83%; transform: translateX(-50%); }
 
 body[data-hover] .slice-subtitle {
   opacity: 0;
