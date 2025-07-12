@@ -1,4 +1,4 @@
- <!DOCTYPE html> 
+<!DOCTYPE html> 
 <html lang="en">
 
 <head>
@@ -148,18 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
   <div class="slice-title">Precision Agronomy <br> Research Center</div>
   <div class="slice-subtitle">(hover to learn more)</div>
     <div class="slice-content" id="content3">
-  <div class="svg-overlay-wrapper">
-    <!-- Base map -->
-    <object id="base-map" type="image/svg+xml" data="static/assets/img/PARC_property.svg"></object>
-
-    <!-- Overlays -->
-    <object class="overlay selectable" id="layer-pods" type="image/svg+xml" data="static/assets/img/PARC_pods.svg"></object>
-    <object class="overlay selectable" id="layer-animals" type="image/svg+xml" data="static/assets/img/PARC_Animals.svg"></object>
-    <object class="overlay selectable" id="layer-greenhouse" type="image/svg+xml" data="static/assets/img/PARC_Greenhouse.svg"></object>
-    <object class="overlay selectable" id="layer-academy" type="image/svg+xml" data="static/assets/img/PARC_Academy.svg"></object>
-    <object class="overlay selectable" id="layer-crops" type="image/svg+xml" data="static/assets/img/PARC_Crops.svg"></object>
-  </div>
-</div>
+            <img src="static/assets/img/PARC.png" alt="...">
 
   </div>
 </section>
@@ -285,7 +274,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 .slice3 .slice-subtitle {
   left: 81%;
-  top: 25%;
+  top: 37%;
   transform: translateX(-50%);
 }
 
@@ -356,50 +345,19 @@ body:not([data-hover]) .slice-title {
     clip-path: polygon(15% 0%, 30% 0%, 15% 100%, 0% 100%);
   }
 
-.svg-overlay-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 1000px;
-  aspect-ratio: 1027 / 661;
-  margin: auto;
-}
 
-.svg-overlay-wrapper object {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
+#content3 {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  border-radius: 0;
 }
-
-.svg-overlay-wrapper object.selectable {
-  pointer-events: auto;
-  transition: opacity 0.3s ease;
-  cursor: pointer;
+#content3 img {
+  width: 80%;   /* adjust as needed (e.g., 60%, 50%) */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* center horizontally */
 }
-
-.svg-overlay-wrapper object.selectable:hover {
-  opacity: 0.9;
-  outline: 2px dashed #4CAF50;
-}
-
-#layer-pods {
-  transform: translate(10px, 20px);
-}
-#layer-animals {
-  transform: translate(100px, 50px);
-}
-#layer-greenhouse {
-  transform: translate(200px, 30px);
-}
-#layer-academy {
-  transform: translate(300px, 10px);
-}
-#layer-crops {
-  transform: translate(00px, 90px);
-}
-
 
 </style>
 
