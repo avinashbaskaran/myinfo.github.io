@@ -130,9 +130,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <!-- Top Section -->
 <section class="top-section">
-  <div class="slice slice1"></div>
-  <div class="slice slice2"></div>
-  <div class="slice slice3"></div>
+
+  <div class="slice slice1">
+     <div class="slice-title">Humin Labs LLC</div>
+    <div class="slice-content" id="content1">[carousel1]</div>
+    
+  </div>
+
+  <div class="slice slice2">
+    <div class="slice-title">Agrotronic Systems LLC</div>
+    <div class="slice-content" id="content2">[carousel2]</div>
+  </div>
+  <div class="slice slice3">    
+  <div class="slice-title">Precision Agronomy <br> Research Center</div>
+    <div class="slice-content" id="content3">
+      <!-- Carousel here -->
+      <div id="carousel3" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="static/assets/img/PARC.svg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="static/assets/img/example2.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel3" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </div>
 </section>
 
 <style>
@@ -168,7 +198,76 @@ document.addEventListener("DOMContentLoaded", function () {
   .slice3 {
     clip-path: polygon(66.66% 0%, 100% 0%, 100% 100%, 33.66% 100%);
     background-image: url('static/assets/img/slice_3.png');
-  }
+
+}
+
+.slice-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  width: 60vw;
+  max-width: 700px;
+  max-height: 70vh;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.slice-content img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+.slice-title {
+  position: absolute;
+  top: 5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  z-index: 20;
+  pointer-events: none;
+  text-align: center;
+  max-width: 90%;   
+  white-space: nowrap;
+}
+
+/* Position titles per slice */
+.slice1 .slice-title {
+  left: 15%;
+  transform: translateX(-50%);
+}
+
+.slice2 .slice-title {
+  left: 45%;
+  transform: translateX(-50%);
+}
+
+.slice3 .slice-title {
+  left: 81%;
+  transform: translateX(-50%);
+}
+
+
+
+
+/* Show and scale up on hover */
+body[data-hover="slice1"] #content1,
+body[data-hover="slice2"] #content2,
+body[data-hover="slice3"] #content3 {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: auto;
+}
+
 
   /* Hover on slice1 */
   body[data-hover="slice1"] .slice1 {
