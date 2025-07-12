@@ -133,35 +133,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
   <div class="slice slice1">
      <div class="slice-title">Humin Labs LLC</div>
+    <div class="slice-subtitle">(hover to learn more)</div>
+
     <div class="slice-content" id="content1">[carousel1]</div>
     
   </div>
 
   <div class="slice slice2">
     <div class="slice-title">Agrotronic Systems LLC</div>
+    <div class="slice-subtitle">(hover to learn more)</div>
     <div class="slice-content" id="content2">[carousel2]</div>
   </div>
   <div class="slice slice3">    
   <div class="slice-title">Precision Agronomy <br> Research Center</div>
+  <div class="slice-subtitle">(hover to learn more)</div>
     <div class="slice-content" id="content3">
-      <!-- Carousel here -->
-      <div id="carousel3" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="static/assets/img/PARC.svg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="static/assets/img/example2.jpg" class="d-block w-100" alt="...">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carousel3" data-bs-slide="next">
-          <span class="carousel-control-next-icon"></span>
-        </button>
-      </div>
-    </div>
+  <div class="svg-overlay-wrapper">
+    <!-- Base map -->
+    <object id="base-map" type="image/svg+xml" data="static/assets/img/PARC_property.svg"></object>
+
+    <!-- Overlays -->
+    <object class="overlay selectable" id="layer-pods" type="image/svg+xml" data="static/assets/img/PARC_pods.svg"></object>
+    <object class="overlay selectable" id="layer-animals" type="image/svg+xml" data="static/assets/img/PARC_Animals.svg"></object>
+    <object class="overlay selectable" id="layer-greenhouse" type="image/svg+xml" data="static/assets/img/PARC_Greenhouse.svg"></object>
+    <object class="overlay selectable" id="layer-academy" type="image/svg+xml" data="static/assets/img/PARC_Academy.svg"></object>
+    <object class="overlay selectable" id="layer-crops" type="image/svg+xml" data="static/assets/img/PARC_Crops.svg"></object>
+  </div>
+</div>
+
   </div>
 </section>
 
@@ -259,6 +258,41 @@ document.addEventListener("DOMContentLoaded", function () {
   transform: translateX(-50%);
 }
 
+.slice-subtitle {
+  position: absolute;
+  top: 8rem;
+  font-size: 1rem;
+  font-style: italic;
+  color: #f5f5f5;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  z-index: 19;
+  text-align: center;
+  white-space: nowrap;
+  transition: opacity 0.4s ease-in-out;
+  opacity: 1;
+}
+
+/* Position subtitles per slice */
+.slice1 .slice-subtitle {
+  left: 15%;
+  transform: translateX(-50%);
+}
+
+.slice2 .slice-subtitle {
+  left: 45%;
+  transform: translateX(-50%);
+}
+
+.slice3 .slice-subtitle {
+  left: 81%;
+  top: 25%;
+  transform: translateX(-50%);
+}
+
+/* Hide all subtitles when any section is hovered */
+body[data-hover] .slice-subtitle {
+  opacity: 0;
+}
 
 
 
@@ -321,6 +355,51 @@ body:not([data-hover]) .slice-title {
   body[data-hover="slice3"] .slice2 {
     clip-path: polygon(15% 0%, 30% 0%, 15% 100%, 0% 100%);
   }
+
+.svg-overlay-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  aspect-ratio: 1027 / 661;
+  margin: auto;
+}
+
+.svg-overlay-wrapper object {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.svg-overlay-wrapper object.selectable {
+  pointer-events: auto;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.svg-overlay-wrapper object.selectable:hover {
+  opacity: 0.9;
+  outline: 2px dashed #4CAF50;
+}
+
+#layer-pods {
+  transform: translate(10px, 20px);
+}
+#layer-animals {
+  transform: translate(100px, 50px);
+}
+#layer-greenhouse {
+  transform: translate(200px, 30px);
+}
+#layer-academy {
+  transform: translate(300px, 10px);
+}
+#layer-crops {
+  transform: translate(00px, 90px);
+}
+
 
 </style>
 
