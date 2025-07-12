@@ -314,6 +314,10 @@ body[data-hover="slice3"] #content3-hover {
 }
 
 #content3-default {
+  position: absolute;
+  top: 35%;  /* Adjust as needed */
+  left: 80%;
+  transform: translateX(-50%) scale(0.7);  /* Only center horizontally */
   background: transparent;
   box-shadow: none;
   padding: 0;
@@ -322,6 +326,8 @@ body[data-hover="slice3"] #content3-hover {
   pointer-events: none;
   transition: opacity 0.4s ease;
 }
+
+
 #content3-hover {
   background: transparent;
   box-shadow: none;
@@ -336,6 +342,10 @@ body[data-hover="slice3"] #content3-hover {
 body[data-hover="slice3"] #content3-default {
   opacity: 0;
 }
+body:not([data-hover="slice3"]) #content3-default {
+  opacity: 1;
+}
+
 body[data-hover="slice3"] #content3-hover {
   opacity: 1;
   pointer-events: auto;
