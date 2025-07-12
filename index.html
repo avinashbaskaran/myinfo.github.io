@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html> 
 <html lang="en">
 
 <head>
@@ -74,6 +74,22 @@
     <!-- Core JS-->
     <script type="text/javascript" src="static/js/scripts.js"></script>
     <script type="text/javascript" src="static/js/js-yaml.min.js"></script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('.slice').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      document.body.setAttribute('data-hover',
+        el.classList.contains('slice1') ? 'slice1' :
+        el.classList.contains('slice2') ? 'slice2' :
+        'slice3');
+    });
+    el.addEventListener('mouseleave', () => {
+      document.body.removeAttribute('data-hover');
+    });
+  });
+});
+</script>
+
 
 </head>
 
@@ -89,6 +105,13 @@
                 <i class="bi-list"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <!-- Photo --
+    <div class="container px-2">
+        <div id="avatar">
+            <img class="shadow" src="static/assets/img/photo.png">
+        </div>
+    </div>
+     Photo -->
                 <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
                     <li class="nav-item">
                         <a class="nav-link me-lg-3" href="#page-top">HOME</a>
@@ -105,23 +128,94 @@
         </div>
     </nav>
 
-    <!-- Top Section -->
-    <section class="top-section" style="background-image: url('static/assets/img/Open Source Technologist Rural.png');">
-        <div class="top-section-content">
-            <div class="container px-5">
-                <h2 id="top-section-bg-text" class="text-white display-3 lh-1 font-alt"></h2>
-            </div>
-        </div>
-    </section>
-    <!-- Top Section -->
+<!-- Top Section -->
+<section class="top-section">
+  <div class="slice slice1"></div>
+  <div class="slice slice2"></div>
+  <div class="slice slice3"></div>
+</section>
 
-    <!-- Photo -->
-    <div class="container px-5">
-        <div id="avatar">
-            <img class="shadow" src="static/assets/img/photo.png">
-        </div>
-    </div>
-    <!-- Photo -->
+<style>
+  .top-section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .slice {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    transition: clip-path 0.4s ease-in-out, z-index 0.3s;
+    z-index: 1;
+  }
+
+  .slice1 {
+    clip-path: polygon(0% 0%, 33.33% 0%, 0% 100%, 0% 100%);
+    background-image: url('static/assets/img/slice_1.png');
+  }
+
+  .slice2 {
+    clip-path: polygon(33.33% 0%, 66.66% 0%, 33.33% 100%, 0% 100%);
+    background-image: url('static/assets/img/slice_2.png');
+  }
+
+  .slice3 {
+    clip-path: polygon(66.66% 0%, 100% 0%, 100% 100%, 33.66% 100%);
+    background-image: url('static/assets/img/slice_3.png');
+  }
+
+  /* Hover on slice1 */
+  body[data-hover="slice1"] .slice1 {
+    clip-path: polygon(0% 0%, 85% 0%, 70% 100%, 0% 100%);
+    z-index: 2;
+  }
+
+  body[data-hover="slice1"] .slice2 {
+    clip-path: polygon(85% 0%, 100% 0%, 85% 100%, 33% 100%);
+  }
+
+  body[data-hover="slice1"] .slice3 {
+    clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 85% 100%);
+  }
+
+  /* Hover on slice2 */
+  body[data-hover="slice2"] .slice1 {
+    clip-path: polygon(0% 0%, 20% 0%, 5% 100%, 0% 100%);
+  }
+
+  body[data-hover="slice2"] .slice2 {
+    clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
+    z-index: 2;
+  }
+
+  body[data-hover="slice2"] .slice3 {
+    clip-path: polygon(80% 0%, 100% 0%, 100% 100%, 60% 100%);
+  }
+
+  /* Hover on slice3 */
+  body[data-hover="slice3"] .slice3 {
+    clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 15% 100%);
+    z-index: 2;
+  }
+
+  body[data-hover="slice3"] .slice1 {
+    clip-path: polygon(0% 0%, 15% 0%, 0% 100%, 0% 100%);
+  }
+
+  body[data-hover="slice3"] .slice2 {
+    clip-path: polygon(15% 0%, 30% 0%, 15% 100%, 0% 100%);
+  }
+
+</style>
+
+
+
     
     <!-- Home -->
     <section class="bg-gradient-primary-to-secondary-light mt5 md5" id="home">
