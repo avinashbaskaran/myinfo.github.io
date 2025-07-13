@@ -142,8 +142,19 @@ document.addEventListener("DOMContentLoaded", function () {
   <div class="slice slice2">
     <div class="slice-title">Agrotronic Systems LLC</div>
     <div class="slice-subtitle">hover to learn more</div>
-    <div class="slice-content" id="content2">[carousel2]</div>
-  </div>
+    <div class="slice-content-disappear" id="content2-default">
+        <img src="static/assets/img/chicken.png" alt="Agrotronic Icon 1" class="img-chicken">
+        <img src="static/assets/img/microscope.png" alt="Agrotronic Icon 2" class="img-microscope">
+        <img src="static/assets/img/seedling.png" alt="Agrotronic Icon 3" class="img-seedling">
+    </div>
+    <div class="slice-content" id="content2-hover">
+        <img src="static/assets/img/chicken.png" alt="Agrotronic Icon 1" class="img-chicken">
+        <img src="static/assets/img/microscope.png" alt="Agrotronic Icon 2" class="img-microscope">
+        <img src="static/assets/img/seedling.png" alt="Agrotronic Icon 3" class="img-seedling">
+    </div>
+<div class="slice-content" id="content2">
+</div>
+</div>
   <div class="slice slice3">    
   <div class="slice-title">Precision Agronomy <br> Research Center</div>
   <div class="slice-subtitle">hover to learn more</div>
@@ -213,7 +224,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 body:not([data-hover]) .slice-title,
 body[data-hover="slice1"] .slice1 .slice-title,
-body[data-hover="slice2"] .slice2 .slice-title,
+body[data-hover="slice2"] .slice2 .slice-title{
+  opacity: 1;
+}
 body[data-hover="slice3"] .slice3 .slice-title {
   opacity: 1;
 }
@@ -305,6 +318,7 @@ body[data-hover="slice3"] .slice2 {
   border-radius: 8px;
 }
 
+/* Hover-triggered content visibility */
 body[data-hover="slice1"] #content1,
 body[data-hover="slice2"] #content2,
 body[data-hover="slice3"] #content3-hover {
@@ -313,11 +327,59 @@ body[data-hover="slice3"] #content3-hover {
   transform: translate(-50%, -50%) scale(1);
 }
 
+/* ---------- Slice 2 (Agrotronic) Default Icon ---------- */
+#content2-default {
+  position: absolute;
+  top: 0;
+  left: 40.33vw;
+  width: 35.33vw;
+  height: 100vh;
+  background: transparent;
+  overflow: visible;
+  pointer-events: none;
+  display: block;
+  box-shadow: none;
+
+}
+
+
+
+#content2-default img {
+  width: 80%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+body[data-hover="slice2"] #content2-default {
+  opacity: 0;
+}
+body:not([data-hover="slice2"]) #content2-default {
+  opacity: 1;
+}
+#content2-hover {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  border-radius: 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.95);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+body[data-hover="slice2"] #content2-hover {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-30%, -5%) scale(1.75);
+}
+
+/* ---------- Slice 3 (PARC) Default + Hover Behavior ---------- */
 #content3-default {
   position: absolute;
-  top: 35%;  /* Adjust as needed */
+  top: 35%;
   left: 80%;
-  transform: translateX(-50%) scale(0.7);  /* Only center horizontally */
+  transform: translateX(-50%) scale(0.7);
   background: transparent;
   box-shadow: none;
   padding: 0;
@@ -326,7 +388,6 @@ body[data-hover="slice3"] #content3-hover {
   pointer-events: none;
   transition: opacity 0.4s ease;
 }
-
 
 #content3-hover {
   background: transparent;
@@ -349,10 +410,35 @@ body:not([data-hover="slice3"]) #content3-default {
 body[data-hover="slice3"] #content3-hover {
   opacity: 1;
   pointer-events: auto;
-  transform: translate(-30%, -05%) scale(1.75);
+  transform: translate(-30%, -5%) scale(1.75);
 }
-</style>
 
+
+.img-chicken {
+  position: absolute;
+  top: 102%;
+  left: 35%;
+  width: 25% !important;
+  height: auto !important;
+}
+
+.img-microscope {
+  position: absolute;
+  top: 130%;
+  left: 20%;
+  width: 35% !important;
+  height: auto !important;
+}
+
+.img-seedling {
+  position: absolute;
+  top: 155%; /* use top, not bottom */
+  left: 0%;
+  width: 22% !important;
+  height: auto !important;
+}
+
+</style>
 
 
 
