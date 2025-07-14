@@ -1,16 +1,25 @@
 #### Submitted
 
-- <strong>S. Li</strong>, X. Yang*, A. Cao*, K. Fan, Y. Liu, C. Wang, and Q. Niu. LaNCoR: Label Noise-Contrastive Robust Learning for Seismic Signal Processing with Application to Microseismic Arrival Time Picking. <strong>Rej :)</strong> [[Code]](https://github.com/senli1073/LaNCor)
+- <strong>Baskaran, A.</strong> & Rose, C. G. (2025). "The Persistent Spatiotemporal Homology of Neuromechanics Guarantees Robust Estimation." *[In Prep] IEEE Transactions on Neural Systems and Rehabilitation Engineering.* (Impact Factor: 4.8, Q1 Journal in Biomedical Engineering).
 
 #### Published
 
-- X. Yang, <strong>S. Li</strong>, A. Cao*, C. Wang*, Y. Liu, X. Bai, and Q. Niu (2024). Deep Transfer Learning for P-wave Arrival Identification and Automatic Seismic Source Location in Underground Mines. <strong>International Journal of Rock Mechanics and Mining Sciences</strong>. [[Paper]](https://doi.org/10.1016/j.ijrmms.2024.105888)
+- <strong>Baskaran, A.</strong> & Rose, C. G. (2024). "Neuromechanical Probabilistic Models for Characterizing Mild Traumatic Brain Injury: A Systematic Review & Meta-Analysis." *Journal of Clinical Medicine.* (Impact Factor: 4.5, Q1 Journal in Medicine, General & Internal).
 
-- <strong>S. Li</strong>, X. Yang*, A. Cao*, C. Wang, Y. Liu, Y. Liu, and Q. Niu (2024). SeisT: A Foundational Deep-Learning Model for Earthquake Monitoring Tasks. <strong>IEEE Transactions on Geoscience and Remote Sensing</strong>. [[Paper]](https://doi.org/10.1109/TGRS.2024.3371503) [[Code]](https://github.com/senli1073/SeisT)
+- <strong>Baskaran, A.</strong> Basyal, S., Allen, B. C., & Rose, C. G. (2024). "Neuromechanical Generative Model Predictive Control of a Soft Hand Exoskeleton for Assistance in Functional Tasks." *Journal of Medical Robotics Research.* (Impact Factor: 2.7).
 
-- A. Cao, X. Yang, C. Wang*, <strong>S. Li</strong>, Y. Liu, L. Dou, and Q. Niu (2023). High-Precision Phase Picking and Automatic Source Locating Method for Seismicity in Mines Based on Deep Transfer Learning. <strong>Journal of China Coal Society</strong>. [[Paper]](https://doi.org/10.13225/j.cnki.jccs.2023.0095)
+- <strong>Baskaran, A.</strong> Hollinger, D. S., Hailey, R. O., Zabala, M. E., & Rose, C. G. (2023). "Neuromuscular State Estimation via Space-by-Time Neural Signal Decomposition." *ASME Letters in Dynamic Systems and Control.* (Impact Factor: 2.1).
 
-- A. Cao, Y. Liu, X. Yang*, <strong>S. Li</strong>, C. Wang, X. Bai, and Y. Liu (2022). Physical Index and Data Fusion-Driven Method for Coal Burst Prediction in Time Sequence. <strong>Journal of China Coal Society</strong>. [[Paper]](https://doi.org/10.13225/j.cnki.jccs.2022.0680)
+- <strong>Baskaran, A.</strong> Basyal, S., Allen, B. C., & Rose, C. G. (2024). "NeuroGAIN: Neuromechanical Generative Demand Forecasting Toward Optimal Control of Soft Hand Exoskeletons." *IEEE International Symposium on Medical Robotics.*, GA, USA
 
-- X. Yang, X. Yu, C. Zhang, <strong>S. Li</strong>, and Q. Niu (2021). MineGPS: Battery-Free Localization Base Station for Coal Mine Environment. <strong>IEEE Communications Letters</strong>. [[Paper]](https://doi.org/10.1109/LCOMM.2021.3081593)
+- <strong>Baskaran, A.</strong> Basyal, S., Allen, B. C., & Rose, C. G. (2024). "Neuromuscular Model-Free Epistemic Risk Guided Exploration (NeuroMERGE) for Safe Autonomy in Human-Robot Interaction." *IEEE American Control Conference.*, TO, CA
 
+- <strong>Baskaran, A.</strong> Hood, J., Hailey, R. O., & Rose, C. G. (2024). "Design of a Haptic Paddle for Accessible Integration of Data-Driven Methods in System Dynamics Education." *IEEE/ASME International Conference on Advanced Intelligent Mechatronics*. MA, USA
+
+- <strong>Baskaran, A.</strong> & Rose, C. G. (2022). "Assessment of Neuromuscular Fatigue from Muscle Synergies in Hand Poses." *Modeling, Estimation & Control Conference*, NJ, USA.
+
+- Steadman, K., Stubbs, C., <strong>Baskaran, A.</strong> Rose, C. G., & Bevly, M. (2022). "Teleoperated Ground Vehicle Rollover Prevention Via Haptic Feedback of the Zero-Moment Point Index." *Proc. of the Ground Vehicle Systems Engineering & Technology Symposium*, MI, USA.
+
+- <strong>Baskaran, A.</strong> Times, M. W., Esmatloo, P., Rose, C. G., & Deshpande, A. D. (2021). "An Anthropomorphic Passive Instrumented Hand for Validating Wearable Robotic Systems." *IEEE/ASME International Conference on Advanced Intelligent Mechatronics*, pp. 134-139.
+
+- Read, R. L., & <strong>Baskaran, A.<strong> (2021). "Controlling a Variable Geometry Truss Tetrobot with an Isomorphic Puppet Controller." *Intl. Conf. on AI, Robotics & Control*, NY, USA, pp. 38-42.
