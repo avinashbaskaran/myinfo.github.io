@@ -137,6 +137,9 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="slice-content-disappear" id="content1-default">
         <img src="static/assets/img/HuminLabs.png" alt="Humin Labs Default Icon" class="img-huminlabs">
     </div>
+    <div class="slice-content" id="content1">
+        <img src="static/assets/img/HuminLabs_details.png" alt="Humin Labs Hover" class="img-huminlabs-hover">
+    </div>
     
   </div>
 
@@ -149,9 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <img src="static/assets/img/seedling.png" alt="Agrotronic Icon 3" class="img-seedling">
     </div>
     <div class="slice-content" id="content2-hover">
-        <img src="static/assets/img/chicken.png" alt="Agrotronic Icon 1" class="img-chicken">
-        <img src="static/assets/img/microscope.png" alt="Agrotronic Icon 2" class="img-microscope">
-        <img src="static/assets/img/seedling.png" alt="Agrotronic Icon 3" class="img-seedling">
+        <img src="static/assets/img/Agrotronics_details.png" alt="Agrotronic Icon 1" class=".img-agro-hover">
     </div>
 </div>
   <div class="slice slice3">    
@@ -371,7 +372,7 @@ body:not([data-hover="slice2"]) #content2-default {
 body[data-hover="slice2"] #content2-hover {
   opacity: 1;
   pointer-events: auto;
-  transform: translate(-30%, -5%) scale(1.75);
+  transform: translate(-50%, -30%) scale(1.2);
 }
 
 /* ---------- Slice 3 (PARC) Default + Hover Behavior ---------- */
@@ -466,6 +467,42 @@ body[data-hover="slice1"] #content1-default {
 body:not([data-hover="slice1"]) #content1-default {
   opacity: 1;
 }
+
+#content1 {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  border-radius: 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.95);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+body[data-hover="slice1"] #content1 {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-65%, -5%) scale(1.5);
+}
+
+.img-huminlabs-hover {
+  width: 90%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.img-agro-hover {
+  width: 90%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
 
 </style>
 
