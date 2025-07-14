@@ -1,3 +1,5 @@
+### Education
+
 Ph.D. in Mechanical Engineering - Auburn University                   
 
 M.S. Mechanical Engineering – Auburn University                   
