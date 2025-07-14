@@ -95,38 +95,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <body id="page-top">
     <!-- Navigation-->
-    <nav class="header navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
-        <div class="container px-5">
-            <a id="page-top-title" class="navbar-brand fw-bold" href="#page-top"></a>
-            <!-- <a href="#page-top"><img src="static/assets/img/CUMT_LOGO.svg" style="width: 11rem;"></a> -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                MENU
-                <i class="bi-list"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <!-- Photo --
-    <div class="container px-2">
-        <div id="avatar">
-            <img class="shadow" src="static/assets/img/photo.png">
+    <!-- Navigation-->
+<nav class="header navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
+    <div class="container px-5 position-relative">
+        <a id="page-top-title" class="navbar-brand fw-bold" href="#page-top"></a>
+
+        <!-- Scroll Notice -->
+        <div id="scroll-notice" class="scroll-notice">(scroll for more)</div>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            MENU
+            <i class="bi-list"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link me-lg-3" href="#page-top">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link me-lg-3" href="#publications">PUBLICATIONS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link me-lg-3" href="#awards">AWARDS</a>
+                </li>
+            </ul>
         </div>
     </div>
-     Photo -->
-                <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link me-lg-3" href="#page-top">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link me-lg-3" href="#publications">PUBLICATIONS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link me-lg-3" href="#awards">AWARDS</a>
-                    </li>
+</nav>
 
-                </ul>
-            </div>
-        </div>
-    </nav>
 
 <!-- Top Section -->
 <section class="top-section">
@@ -503,6 +500,25 @@ body[data-hover="slice1"] #content1 {
   border-radius: 8px;
 }
 
+.scroll-notice {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.75rem;
+  color: #ffffffcc;
+  font-style: italic;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  z-index: 9999; /* Ensure it's on top */
+}
+
+.scroll-notice.hidden {
+  opacity: 0;
+}
+
+
 
 </style>
 
@@ -557,6 +573,17 @@ body[data-hover="slice1"] #content1 {
             </div>
         </div>
     </footer>
+
+    <script>
+  window.addEventListener("scroll", function () {
+    const notice = document.getElementById("scroll-notice");
+    if (window.scrollY > 10) {
+      notice.classList.add("hidden");
+    } else {
+      notice.classList.remove("hidden");
+    }
+  });
+</script>
 
 </body>
 
